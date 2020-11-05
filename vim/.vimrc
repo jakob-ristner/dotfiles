@@ -1,7 +1,7 @@
-"Rilles epic vimrc"
-
 set nocompatible              " be iMproved, required
 filetype off                  " required
+
+" comment to test symlink
 " set the runtime path to include Vundle and initialize
 set rtp+=$HOME/.vim/bundle/Vundle.vim/
 call vundle#begin('$HOME/.vim/bundle/')
@@ -29,7 +29,8 @@ filetype plugin indent on    " required
 
 " Colors 
 " ---------------------------------------------------
-colorscheme gruvbox
+colorscheme dracula
+let g:dracula_italic = 0
 set background=dark
 syntax enable
 set display+=lastline
@@ -116,7 +117,13 @@ inoremap ¤AA Å
 inoremap ¤AE Ä
 inoremap ¤OE Ö
 let g:user_emmet_leader_key = "<C-F>"
-inoremap <C-c> <Esc>
+
+inoremap ( ()<Left>
+inoremap [ []<Left>
+inoremap ' ''<Left>
+inoremap " ""<Left>
+inoremap { {}<Left>
+
 set colorcolumn=0
 let mapleader = ","
 
@@ -181,6 +188,3 @@ let g:netrw_banner = 0
 let g:netrw_liststyle = 0
 
 set nocursorline
-let &t_SI = "\<Esc>[6 q"
-let &t_SR = "\<Esc>[4 q"
-let &t_EI = "\<Esc>[2 q<"

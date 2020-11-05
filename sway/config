@@ -15,10 +15,11 @@ set $browser firefox-developer-edition
 set $menu dmenu_path | dmenu | xargs swaymsg exec --
 
 #wallpaper
-output * bg ~/.wallpapers/gruvbox.png fill
+output * bg ~/.wallpapers/artix.png fill
 
 #Keymap
 input * {
+    xkb_options caps:escape 
 	xkb_layout "se"
     tap enabled
 }
@@ -27,7 +28,7 @@ input * {
 #Startup commands
     exec sudo tlp bat
     exec sudo brightnessctl set 100%
-    exec fader
+    exec python ~/.config/sway/scripts/fader.py
 
     #shitty bodge but cant be bothered to fstab
     exec sudo mount /dev/sdb2 /home/rille/hdd
@@ -36,6 +37,9 @@ input * {
 # Application startups
     # Start a terminal
     bindsym $mod+Return exec $term
+
+    # Lock screen
+#    bindsym $mod+p exec swaylock -c 282a36 --no-unlock-indicator
 
     #Browser
     bindsym $mod+tab exec $browser
@@ -48,7 +52,7 @@ floating_modifier $mod normal
 # Reload the configuration file
 bindsym $mod+Shift+c reload
 
-client.focused #282828 #282828 #282828 #282828 #282828
+client.focused #212530 #212530 #212530 #212530 #212530
 
 # Kill focused window
 bindsym $mod+Shift+q kill
@@ -192,6 +196,6 @@ default_border pixel 0
 font pango: SourceCodePro Medium 12
 
 #gaps outer 15
-gaps inner 10
+#gaps inner 10
 
 include /etc/sway/config.d/*

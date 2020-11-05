@@ -7,7 +7,7 @@
 }
 
 window#waybar {
-    background-color: rgba(28, 28, 28, 0);
+    background-color: rgba(28, 28, 28, 0.5);
     color: white;
 }
 
@@ -15,6 +15,11 @@ window#waybar {
     font-weight: bold;
     font-family: "Ubuntu";
 }
+/*
+#workspaces {
+    padding: 0 5px;
+}
+*/
 
 #workspaces button {
     padding: 0 5px;
@@ -25,8 +30,8 @@ window#waybar {
 
 #workspaces button.focused {
     font-weight: bold;
-    color: #50fa7b;
-    border-top: 2px solid #50fa7b;
+    color: #f79921;
+    border-bottom: 3px solid #f79921;
 }
 
 #mode {
@@ -36,14 +41,13 @@ window#waybar {
 
 #clock, #battery, #cpu, #memory, #network, #pulseaudio, #custom-spotify, #tray, #mode {
     padding: 0 5px;
-    margin: 0 5px;
+    margin: 0 10px;
     
 }
 
 
 #battery {
-    border-top: 2px solid #bd93f9;
-    /*border-radius: 10px;*/
+    border-bottom: 3px solid #98971a
 }
 
 #battery icon {
@@ -51,7 +55,7 @@ window#waybar {
 }
 
 #battery.charging {
-    color: #bd93f9;
+    color: #98971a;
 }
 
 @keyframes blink {
@@ -71,31 +75,27 @@ window#waybar {
 }
 
 #cpu {
-    border-top: 2px solid #f1fa8c;
-    /*border-radius: 10px;*/
+    border-bottom: 3px solid #f79921
 }
 
 #clock {
-    font-weight: bold;
+    border-bottom: 3px solid #98971a
 }
 
 #memory {
-    border-top: 2px solid #ff79c6;
-    /*border-radius: 10px;*/
+    border-bottom: 3px solid #b16286
 }
 
 #network {
-    border-top: 2px solid #50fa7b;
-    /*border-radius: 10px;*/
+    border-bottom: 3px solid #8ec07c
 }
 
 #network.disconnected {
-    background: #ff6e67;
+    background: #f53c3c;
 }
 
 #pulseaudio {
-    border-top: 2px solid #8be9fd;
-    /*border-radius: 10px*/
+    border-bottom: 3px solid #ebdbb2
 }
 
 #pulseaudio.muted {

@@ -4,9 +4,8 @@
     "height": 30, // Waybar height
     // "width": 1366, // Waybar width
     // Choose the order of the modules
-    "modules-left": ["sway/workspaces", "sway/mode"],
-    "modules-right": ["pulseaudio", "network", "cpu", "memory", "battery"],
-    "modules-center": ["clock"],
+    "modules-left": ["sway/workspaces", "clock", "sway/mode"],
+    "modules-right": ["pulseaudio", "network", "cpu", "memory", "battery", "tray"],
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
@@ -15,7 +14,7 @@
         "spacing": 10
     },
     "clock": {
-        "format": "{:%a %H:%M   %e %b %Y}"
+        "format": "helo"
     },
     "cpu": {
         "format": "{usage}% "
