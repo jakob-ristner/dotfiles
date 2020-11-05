@@ -32,8 +32,7 @@ filetype plugin indent on    " required
 colorscheme dracula
 let g:dracula_italic = 0
 set background=dark
-syntax enable
-set display+=lastline
+syntax enable set display+=lastline
 
 " Tabs, indentation and numbers
 " ---------------------------------------------------
@@ -186,5 +185,9 @@ let g:seiya_auto_enable=1
 
 let g:netrw_banner = 0
 let g:netrw_liststyle = 0
+
+let &t_SI = "\<Esc>[6 q"
+let &t_SR = "\<Esc>[4 q"
+let &t_EI = "\<Esc>[2 q"
 
 set nocursorline
