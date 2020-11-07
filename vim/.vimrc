@@ -23,6 +23,7 @@ Plugin 'rust-lang/rust.vim'
 Plugin 'junegunn/goyo.vim'
 Plugin 'dracula/vim'
 Plugin 'sirtaj/vim-openscad'
+Plugin 'preservim/nerdtree'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -102,6 +103,8 @@ nnoremap <C-t> :tabnew<CR>
 map <F8> :vertical resize -5<CR>
 map <F9> :vertical resize +5<CR>
 
+nnoremap <C-n> :NERDTreeToggle<CR>
+
 
 " Markdown syntax recognition
 " -----------------------------------------------------
@@ -132,6 +135,8 @@ nnoremap <space><space> /<++><CR>:noh<CR>4cl
 
 au FileType slim setl sw=2 sts=2 et
 au FileType ruby setl sw=2 sts=2 et
+
+nnoremap <F7> <Esc>:!
 
 au FileType tex setl sw=2 sts=2 et
 au FileType tex set textwidth=0
