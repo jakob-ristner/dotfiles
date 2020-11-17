@@ -15,7 +15,7 @@ set $browser firefox-developer-edition
 set $menu dmenu_path | dmenu | xargs swaymsg exec --
 
 #wallpaper
-output * bg ~/.wallpapers/fuji.png fill
+output * bg ~/media/wallpapers/fuji.png fill
 
 #Keymap
 input * {
@@ -33,7 +33,6 @@ input * {
 
     #shitty bodge but cant be bothered to fstab
     exec sudo mount /dev/sdb2 /home/rille/hdd
-    exec $term
 
 # Application startups
     # Start a terminal
@@ -197,6 +196,6 @@ default_border pixel 0
 font pango: SourceCodePro Medium 12
 
 #gaps outer 15
-gaps inner 15
+gaps inner 10
 
 include /etc/sway/config.d/*

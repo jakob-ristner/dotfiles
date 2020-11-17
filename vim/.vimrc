@@ -24,16 +24,20 @@ Plugin 'junegunn/goyo.vim'
 Plugin 'dracula/vim'
 Plugin 'sirtaj/vim-openscad'
 Plugin 'preservim/nerdtree'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 
 
 
-" Colors 
+"Colors 
 " ---------------------------------------------------
 colorscheme dracula
+let g:airline_theme='dracula'
 let g:dracula_italic = 0
+let g:colors_name="dracula"
 set background=dark
 syntax enable set display+=lastline
 
@@ -127,6 +131,7 @@ inoremap [ []<Left>
 inoremap ' ''<Left>
 inoremap " ""<Left>
 inoremap { {}<Left>
+inoremap ` ``<Left>
 
 set colorcolumn=0
 let mapleader = ","
@@ -142,7 +147,7 @@ au FileType tex setl sw=2 sts=2 et
 au FileType tex set textwidth=0
 au FileType tex nnoremap <F3> :!xelatex <C-r>%<CR>
 au FileType tex nnoremap <F4> :!zathura %:r.pdf --fork<CR><CR>
-au FileType tex execute 'setlocal dict+=~/github/dotfiles/latex.txt'
+au FileType tex execute 'setlocal dict+=~/github/vincent/dotfiles/latex.txt'
 au FileType tex inoremap { {}<Esc>i
 
 inoremap <C-K> <C-X><C-K>
@@ -169,6 +174,9 @@ au FileType rust nnoremap <F4> :!cargo run<CR>
 au FileType haskell nnoremap <F3> :!ghc -dynamic % -outputdir ./build<CR>
 au FileType haskell nnoremap <F4> :!./%:r<CR>
 
+au FileType java nnoremap <F3> :!javac *.java<CR>
+au FileType java nnoremap <F4> :!./jrun.sh<CR>
+
 nnoremap <F1> :set nu! <CR>
 nnoremap <F2> :set rnu! <CR>
 
@@ -185,8 +193,8 @@ nnoremap <Space>ws :split<CR>
 nnoremap W /\u<CR>:noh<CR>
 nnoremap B ?\u<CR>:noh<CR>
 
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
+"let g:airline#extensions#tabline#enabled = 1
+"let g:airline_powerline_fonts = 1
 let g:tex_flavor = 'tex'
 let g:seiya_auto_enable=1
 
