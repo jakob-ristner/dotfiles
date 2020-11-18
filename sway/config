@@ -12,7 +12,7 @@ set $right l
 #some standard applications
 set $term st -e zsh
 set $browser firefox-developer-edition
-set $menu dmenu_path | dmenu | xargs swaymsg exec --
+set $menu dmenu_run
 
 #wallpaper
 output * bg ~/media/wallpapers/fuji.png fill
@@ -45,7 +45,7 @@ input * {
     bindsym $mod+tab exec $browser
 
     # Start your launcher
-    bindsym $mod+d exec $menu
+    bindsym $mod+d exec $menu -x 10 -w 1900 -y 10
 
 floating_modifier $mod normal
 

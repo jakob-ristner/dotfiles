@@ -12,6 +12,7 @@ Plugin 'VundleVim/Vundle.vim'
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
 Plugin 'mattn/emmet-vim' 
+Plugin 'dag/vim2hs'
 Plugin 'neovimhaskell/haskell-vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'flazz/vim-colorschemes'
@@ -24,8 +25,6 @@ Plugin 'junegunn/goyo.vim'
 Plugin 'dracula/vim'
 Plugin 'sirtaj/vim-openscad'
 Plugin 'preservim/nerdtree'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -39,6 +38,7 @@ let g:airline_theme='dracula'
 let g:dracula_italic = 0
 let g:colors_name="dracula"
 set background=dark
+let g:haskell_conceal_wide = 1
 syntax enable set display+=lastline
 
 " Tabs, indentation and numbers
