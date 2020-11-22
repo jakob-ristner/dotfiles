@@ -10,12 +10,28 @@ set $up k
 set $right l
 
 #some standard applications
-set $term st -e zsh
+set $term alacritty -e zsh
 set $browser firefox-developer-edition
-set $menu dmenu_run
+set $menu rofi -show run
 
 #wallpaper
-output * bg ~/media/wallpapers/fuji.png fill
+output * bg ~/media/wallpapers/artixonehalf.png fill
+output * resolution --custom 2560x1440
+output DP-2 mode 2560x1440@119.880997Hz
+output HDMI-A-1 mode 1920x1080@60Hz
+
+output DP-2 pos 0 0
+output HDMI-A-1 pos 2560 0
+
+workspace 1 output DP-2
+workspace 2 output DP-2
+workspace 3 output DP-2
+workspace 4 output DP-2
+workspace 5 output DP-2
+workspace 6 output DP-2
+workspace 7 output HDMI-A-1
+
+
 
 #Keymap
 input * {
@@ -30,6 +46,7 @@ input * {
     exec sudo brightnessctl set 100%
     #exec python ~/.config/sway/scripts/fader.py
     exec flashfocus
+    exec syncthing
 
     #shitty bodge but cant be bothered to fstab
     exec sudo mount /dev/sdb2 /home/rille/hdd
@@ -179,8 +196,8 @@ bindsym $mod+r mode "resize"
 bindsym XF86MonBrightnessUp exec sudo brightnessctl set +5%
 bindsym XF86MonBrightnessDown exec sudo brightnessctl set 5%-
 
-bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+
-bindsym XF86AudioLowerVolume exec amixer -q set Master 5%-
+bindsym $mod+Prior exec amixer -q set Master 5%+
+bindsym $mod+Next exec amixer -q set Master 5%-
 
 
 # Status Bar:
@@ -196,6 +213,6 @@ default_border pixel 0
 font pango: SourceCodePro Medium 12
 
 #gaps outer 15
-gaps inner 10
+gaps inner 20
 
 include /etc/sway/config.d/*

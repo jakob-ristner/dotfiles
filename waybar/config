@@ -1,11 +1,12 @@
 {
     "layer": "top", // Waybar at top layer
+    "output": "DP-2",
     "position": "top", // Waybar at the bottom of your screen
-    "height": 30, // Waybar height
+    "height": 10, // Waybar height
     // "width": 1366, // Waybar width
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode"],
-    "modules-right": ["pulseaudio", "network", "cpu", "memory", "battery"],
+    "modules-right": ["disk", "pulseaudio", "network", "network2", "cpu", "memory", "battery"],
     "modules-center": ["clock"],
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
@@ -21,7 +22,11 @@
         "format": "{usage}% "
     },
     "memory": {
-        "format": "{}% "
+        "format": "{}% "
+    },
+
+    "disk": {
+        "format": "{percentage_used}% "
     },
     "battery": {
         "bat": "BAT0",
@@ -38,8 +43,34 @@
     "network": {
         // "interface": "wlp2s0", // (Optional) To force the use of this interface
         "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
+        "format-ethernet": "{ipaddr} ",
         "format-disconnected": "Disconnected ⚠"
+    },
+    "pulseaudio": {
+        //"scroll-step": 1,
+        "format": "{volume}% ",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-muted": "",
+        "format-icons": {
+            "headphones": "",
+            "handsfree": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    "custom/spotify": {
+        "format": " {}",
+        "max-length": 40,
+        "interval": 30, // Remove this if your script is endless and write in loop
+        "exec": "$HOME/.config/waybar/mediaplayer.sh 2> /dev/null", // Script in resources folder
+        "exec-if": "pgrep spotify"
+    }
+}
+
     },
     "pulseaudio": {
         //"scroll-step": 1,
@@ -65,3 +96,8 @@
         "exec-if": "pgrep spotify"
     }
 }
+
+
+
+
+

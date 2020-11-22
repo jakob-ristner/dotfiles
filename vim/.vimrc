@@ -18,13 +18,14 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'miyakogi/seiya.vim'
 Plugin 'slim-template/vim-slim'
-Plugin 'airblade/vim-gitgutter'
+"Plugin 'airblade/vim-gitgutter'
 Plugin 'vincent-uden/LatexSnippets'
 Plugin 'rust-lang/rust.vim'
 Plugin 'junegunn/goyo.vim'
 Plugin 'dracula/vim'
 Plugin 'sirtaj/vim-openscad'
 Plugin 'preservim/nerdtree'
+Bundle 'sonph/onehalf', {'rtp': 'vim/'}
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -33,10 +34,8 @@ filetype plugin indent on    " required
 
 "Colors 
 " ---------------------------------------------------
-colorscheme dracula
-let g:airline_theme='dracula'
+colorscheme onehalfdark
 let g:dracula_italic = 0
-let g:colors_name="dracula"
 set background=dark
 let g:haskell_conceal_wide = 1
 syntax enable set display+=lastline
@@ -53,6 +52,7 @@ set number
 set showcmd
 set cursorline
 filetype indent on
+set number relativenumber
 
 " Search tweaks
 " ---------------------------------------------------

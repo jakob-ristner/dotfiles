@@ -5,9 +5,9 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Ubuntu Mono:pixelsize=20:antialias=true:autohint=true";
+static char *font = "Roboto Mono:pixelsize=22:antialias=true:autohint=true";
 static char *font2[] = { "Inconsolata for Powerline:pixelsize=16:antialias=true:autohint=true" };
-static int borderpx = 2;
+static int borderpx = 6;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -89,14 +89,14 @@ float alpha = 1;
 static const char *colorname[] = {
 
   /* 8 normal colors */
-  [0] = "#000000", /* black   */
-  [1] = "#ff5555", /* red     */
-  [2] = "#50fa7b", /* green   */
-  [3] = "#f1fa8c", /* yellow  */
-  [4] = "#bd93f9", /* blue    */
-  [5] = "#ff79c6", /* magenta */
-  [6] = "#8be9fd", /* cyan    */
-  [7] = "#bfbfbf", /* white   */
+  [0] = "#1d2026", /* black   */
+  [1] = "#e06c75", /* red     */
+  [2] = "#08c379", /* green   */
+  [3] = "#e5c07b", /* yellow  */
+  [4] = "#61afef", /* blue    */
+  [5] = "#c678dd", /* magenta */
+  [6] = "#56b6c2", /* cyan    */
+  [7] = "#dcdfe4", /* white   */
 
   /* 8 bright colors */
   [8]  = "#4d4d4d", /* black   */
@@ -108,8 +108,8 @@ static const char *colorname[] = {
   [14] = "#9aedfe", /* cyan    */
   [15] = "#e6e6e6", /* white   */
   /* special colors */
-  [256] = "#212530", /* background */
-  [257] = "#f8f8f2", /* foreground */
+  [256] = "#1d2026", /* background */
+  [257] = "#dcdfe4", /* foreground */
 };
 /*
  * Default colors (colorname index)
