@@ -1,16 +1,11 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" comment to test symlink
 " set the runtime path to include Vundle and initialize
 set rtp+=$HOME/.vim/bundle/Vundle.vim/
+
 call vundle#begin('$HOME/.vim/bundle/')
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-" let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
 Plugin 'mattn/emmet-vim' 
 Plugin 'dag/vim2hs'
 Plugin 'neovimhaskell/haskell-vim'
@@ -35,7 +30,6 @@ filetype plugin indent on    " required
 "Colors 
 " ---------------------------------------------------
 colorscheme onehalfdark
-let g:dracula_italic = 0
 set background=dark
 let g:haskell_conceal_wide = 1
 syntax enable set display+=lastline
