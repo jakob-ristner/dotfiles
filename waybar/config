@@ -8,6 +8,19 @@
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-right": ["disk", "pulseaudio", "network", "network2", "cpu", "memory", "battery"],
     "modules-center": ["clock"],
+
+    "sway/workspaces": {
+        //"all-outputs": true,
+        "format": "{icon}",
+        "persistent_workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": [],
+            "6": [],
+        },
+    },
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
@@ -96,6 +109,8 @@
         "exec-if": "pgrep spotify"
     }
 }
+
+
 
 
 

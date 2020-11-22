@@ -6,6 +6,7 @@ set rtp+=$HOME/.vim/bundle/Vundle.vim/
 
 call vundle#begin('$HOME/.vim/bundle/')
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'joshdick/onedark.vim'
 Plugin 'mattn/emmet-vim' 
 Plugin 'dag/vim2hs'
 Plugin 'neovimhaskell/haskell-vim'
