@@ -15,6 +15,7 @@ alias poweroff="loginctl poweroff"
 alias ls="ls --color=auto"
 alias grep="grep --color=auto"
 alias pc="sudo pacman"
+alias mpv="mpv --gpu-context=wayland"
 
 # Basic auto/tab complete:
 autoload -U compinit

@@ -1,6 +1,5 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
-
 " set the runtime path to include Vundle and initialize
 set rtp+=$HOME/.vim/bundle/Vundle.vim/
 
@@ -9,19 +8,18 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'joshdick/onedark.vim'
 Plugin 'mattn/emmet-vim' 
 Plugin 'dag/vim2hs'
+Plugin 'tpope/vim-surround'
 Plugin 'neovimhaskell/haskell-vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'miyakogi/seiya.vim'
-Plugin 'slim-template/vim-slim'
 "Plugin 'airblade/vim-gitgutter'
 Plugin 'vincent-uden/LatexSnippets'
-Plugin 'rust-lang/rust.vim'
 Plugin 'junegunn/goyo.vim'
-Plugin 'dracula/vim'
 Plugin 'sirtaj/vim-openscad'
-Plugin 'preservim/nerdtree'
+Plugin 'itchyny/vim-haskell-indent'
 Bundle 'sonph/onehalf', {'rtp': 'vim/'}
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -121,12 +119,12 @@ inoremap ¤AE Ä
 inoremap ¤OE Ö
 let g:user_emmet_leader_key = "<C-F>"
 
-inoremap ( ()<Left>
-inoremap [ []<Left>
-inoremap ' ''<Left>
-inoremap " ""<Left>
-inoremap { {}<Left>
-inoremap ` ``<Left>
+"inoremap ( ()<Left>
+"inoremap [ []<Left>
+"inoremap ' ''<Left>
+"inoremap  <Left>
+"inoremap { {}<Left>
+"inoremap ` ``<Left>
 
 set colorcolumn=0
 let mapleader = ","
