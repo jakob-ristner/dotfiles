@@ -9,6 +9,7 @@ setopt autocd		# Automatically cd into typed directory.
 stty stop undef		# Disable ctrl-s to freeze terminal.
     
 export LC_CTYPE="sv_SE.UTF-8"
+export EDITOR='vim'
 
 alias reboot="loginctl reboot"
 alias poweroff="loginctl poweroff"
