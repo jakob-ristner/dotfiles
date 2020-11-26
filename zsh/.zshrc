@@ -17,6 +17,7 @@ alias ls="ls --color=auto"
 alias grep="grep --color=auto"
 alias pc="sudo pacman"
 alias mpv="mpv --gpu-context=wayland"
+alias doc='cp ~/documents/latex/template/template ./doc.tex && vim doc.tex'
 
 # Basic auto/tab complete:
 autoload -U compinit

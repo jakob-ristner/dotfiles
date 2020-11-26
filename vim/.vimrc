@@ -1,12 +1,12 @@
 filetype off                  " required
 " set the runtime path to include Vundle and initialize
 set rtp+=$HOME/.vim/bundle/Vundle.vim/
-
 call vundle#begin('$HOME/.vim/bundle/')
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'joshdick/onedark.vim'
 Plugin 'mattn/emmet-vim' 
 Plugin 'dag/vim2hs'
+Plugin 'lervag/vimtex'
 Plugin 'preservim/nerdtree'
 Plugin 'tpope/vim-surround'
 Plugin 'neovimhaskell/haskell-vim'
@@ -66,8 +66,9 @@ set foldmethod=indent
 
 " Movement and pasting
 " -----------------------------------------------------
-nnoremap j gj
-nnoremap k gk
+au FileType tex nnoremap j gj
+au FileType tex nnoremap k gk
+
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 nnoremap <C-J> <C-W><C-J>
@@ -87,7 +88,7 @@ set belloff=all
 set guifont=Roboto:h14
 set linebreak
 
-nnoremap <silent> <leader><S-M> :noh<CR>
+nnoremap <silent> <leader>m :noh<CR>
 
 " Netrw, tabs and splits
 " -----------------------------------------------------
@@ -99,8 +100,24 @@ nnoremap <leader>p :tabp<CR>
 nmap <leader>t ysiw
 nmap <leader>b ysiW
 
+"Replacing inside tags
+nnoremap <leader>" T"ct"
+nnoremap <leader>' T'ct'
+nnoremap <leader>( ])c%()<Left>
+nnoremap <leader>) ])c%()<Left>
+nnoremap <leader>{ ]}c%{}<Left>
+nnoremap <leader>} ]}c%{}<Left>
+nnoremap <leader>< T<ct>
+nnoremap <leader>> T<ct>
+
 nnoremap <C-n> :NERDTreeToggle<CR>
 
+"Macros
+nnoremap <leader>q @q
+
+"Some latex things
+nnoremap <leader>e i\section{}<Left>
+nnoremap <leader>w i\begin{}<Left>
 
 " Markdown syntax recognition
 " -----------------------------------------------------
@@ -131,7 +148,6 @@ au FileType tex set textwidth=0
 au FileType tex nnoremap <F3> :!xelatex <C-r>%<CR>
 au FileType tex nnoremap <F4> :!zathura %:r.pdf --fork<CR><CR>
 au FileType tex execute 'setlocal dict+=~/github/vincent/dotfiles/latex.txt'
-au FileType tex inoremap { {}<Esc>i
 
 au FileType cpp nnoremap <F3> :!make<CR>
 au FileType cpp nnoremap <F4> :!make crun<CR>
