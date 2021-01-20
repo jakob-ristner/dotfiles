@@ -50,17 +50,13 @@ window#waybar {
 
 
 #battery {
-    border-top: 2px solid #bd93f9;
-    /*border-radius: 10px;*/
+    background: #56b6c2;
 }
 
 #battery icon {
     color: red;
 }
 
-#battery.charging {
-    color: #bd93f9;
-}
 
 @keyframes blink {
     to {

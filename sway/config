@@ -10,26 +10,14 @@ set $up k
 set $right l
 
 #some standard applications
-set $term alacritty -e zsh
+set $term st -e zsh
 set $browser firefox-developer-edition
 set $menu rofi -show run
 
 #wallpaper
 output * bg ~/media/wallpapers/artixonehalf.png fill
-output * resolution --custom 2560x1440
-output DP-2 mode 2560x1440@119.880997Hz
-output HDMI-A-1 mode 1920x1080@60Hz
 
-output DP-2 pos 0 0
-output HDMI-A-1 pos 2560 0
 
-workspace 1 output DP-2
-workspace 2 output DP-2
-workspace 3 output DP-2
-workspace 4 output DP-2
-workspace 5 output DP-2
-workspace 6 output DP-2
-workspace 7 output HDMI-A-1
 
 
 
@@ -56,7 +44,7 @@ input * {
     bindsym $mod+Return exec $term
 
     # Lock screen
-    bindsym $mod+i exec swaylock -c 282a36 --no-unlock-indicator
+    bindsym $mod+i exec swaylock -c 1d2026 
 
     #Browser
     bindsym $mod+tab exec $browser

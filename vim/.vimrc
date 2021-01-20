@@ -5,19 +5,14 @@ call vundle#begin('$HOME/.vim/bundle/')
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'joshdick/onedark.vim'
 Plugin 'mattn/emmet-vim' 
-Plugin 'dag/vim2hs'
 Plugin 'lervag/vimtex'
 Plugin 'preservim/nerdtree'
 Plugin 'tpope/vim-surround'
 Plugin 'neovimhaskell/haskell-vim'
-Plugin 'pangloss/vim-javascript'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'miyakogi/seiya.vim'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'vincent-uden/LatexSnippets'
 Plugin 'junegunn/goyo.vim'
-Plugin 'sirtaj/vim-openscad'
-Plugin 'itchyny/vim-haskell-indent'
+Plugin 'myagoki/seiya.vim'
 Bundle 'sonph/onehalf', {'rtp': 'vim/'}
 
 
@@ -68,6 +63,8 @@ set foldmethod=indent
 " -----------------------------------------------------
 au FileType tex nnoremap j gj
 au FileType tex nnoremap k gk
+au FileType text nnoremap j gj
+au FileType text nnoremap k gk
 
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
@@ -149,6 +146,9 @@ au FileType tex nnoremap <F3> :!xelatex <C-r>%<CR>
 au FileType tex nnoremap <F4> :!zathura %:r.pdf --fork<CR><CR>
 au FileType tex execute 'setlocal dict+=~/github/vincent/dotfiles/latex.txt'
 
+au FileType rust nnoremap <F3> :!cargo check<CR>
+au FileType rust nnoremap <F4> :!cargo run<CR>
+
 au FileType cpp nnoremap <F3> :!make<CR>
 au FileType cpp nnoremap <F4> :!make crun<CR>
 
@@ -164,6 +164,7 @@ au FileType h nnoremap <F4> :!make crun<CR>
 
 au FileType haskell nnoremap <F3> :!ghc -dynamic % -outputdir ./build<CR>
 au FileType haskell nnoremap <F4> :!./%:r<CR>
+au FileType haskell nnoremap <F10> :!ghci %<CR>
 
 au FileType java nnoremap <F3> :!javac *.java<CR>
 au FileType java nnoremap <F4> :!./jrun.sh<CR>

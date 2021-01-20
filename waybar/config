@@ -1,6 +1,5 @@
 {
     "layer": "top", // Waybar at top layer
-    "output": "DP-2",
     "position": "top", // Waybar at the bottom of your screen
     "height": 10, // Waybar height
     // "width": 1366, // Waybar width
