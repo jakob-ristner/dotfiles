@@ -1,0 +1,1 @@
+/home/rille/.vim/bundle/LatexSnippets/ftplugin/tex.vim

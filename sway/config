@@ -12,14 +12,17 @@ set $right l
 #some standard applications
 set $term st -e zsh
 set $browser firefox-developer-edition
-set $menu rofi -show run
+set $menu dmenu_run -b
 
 #wallpaper
 output * bg ~/media/wallpapers/artixonehalf.png fill
-
-
-
-
+#workspace 1 output HDMI-A-1
+#workspace 2 output HDMI-A-1
+#workspace 3 output HDMI-A-1
+#workspace 4 output HDMI-A-1
+#workspace 5 output HDMI-A-1
+#workspace 6 output HDMI-A-1
+#workspace 7 output HDMI-A-1
 
 #Keymap
 input * {
@@ -34,7 +37,7 @@ input * {
     exec sudo brightnessctl set 100%
     #exec python ~/.config/sway/scripts/fader.py
     exec flashfocus
-    exec syncthing
+    exec spotifyd --no-daemon
 
     #shitty bodge but cant be bothered to fstab
     exec sudo mount /dev/sdb2 /home/rille/hdd
@@ -50,7 +53,7 @@ input * {
     bindsym $mod+tab exec $browser
 
     # Start your launcher
-    bindsym $mod+d exec $menu -x 10 -w 1900 -y 10
+    bindsym $mod+d exec $menu
 
 floating_modifier $mod normal
 
@@ -184,8 +187,15 @@ bindsym $mod+r mode "resize"
 bindsym XF86MonBrightnessUp exec sudo brightnessctl set +5%
 bindsym XF86MonBrightnessDown exec sudo brightnessctl set 5%-
 
+bindsym XF86AudioPlay exec playerctl --player=spotifyd play-pause
+bindsym XF86AudioPause exec playerctl --player=spotifyd play-pause
+bindsym XF86AudioNext exec playerctl --player=spotifyd next
+bindsym XF86AudioPrev exec playerctl --player=spotifyd previous
+
 bindsym $mod+Prior exec amixer -q set Master 5%+
 bindsym $mod+Next exec amixer -q set Master 5%-
+
+bindsym $mod+m exec spotifyd --no-daemon && $term
 
 
 # Status Bar:
@@ -193,14 +203,11 @@ bar {
     swaybar_command waybar
 }
 
-bindsym $mod+m exec musicplay
-bindsym $mod+shift+m exec pkill mpv
-
 #Some custom stuffs
 default_border pixel 0
 font pango: SourceCodePro Medium 12
 
-#gaps outer 15
-gaps inner 20
+gaps outer 15
+gaps inner 0
 
 include /etc/sway/config.d/*

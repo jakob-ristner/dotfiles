@@ -26,6 +26,8 @@ zmodload zsh/complist
 compinit
 _comp_options+=(globdots)		# Include hidden files.
 
+alias vim="echo -ne '[1 q' && vim"
+
 # vi mode
 bindkey -v
 export KEYTIMEOUT=1
@@ -36,13 +38,6 @@ bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
-
-bindkey '^e' edit-command-line
-
-bindkey -s '^o' 'ncspot^M'
-
-bindkey -s '^r' 'lf^M'
-
 
 
 # Change cursor shape for different vi modes.
@@ -68,7 +63,7 @@ preexec() { echo -ne '[5 q' ;} # Use beam shape cursor for each new prompt.
 
 
 # Load syntax highlighting; should be last.
-source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
+source /usr/share/zsh/plugins/fast-syntax-highlighting.plugin.zsh 2>/dev/null
 
 
-
+    

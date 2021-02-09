@@ -12,7 +12,7 @@ Plugin 'neovimhaskell/haskell-vim'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'vincent-uden/LatexSnippets'
 Plugin 'junegunn/goyo.vim'
-Plugin 'myagoki/seiya.vim'
+Plugin 'miyakogi/seiya.vim'
 Bundle 'sonph/onehalf', {'rtp': 'vim/'}
 
 
@@ -168,6 +168,11 @@ au FileType haskell nnoremap <F10> :!ghci %<CR>
 
 au FileType java nnoremap <F3> :!javac *.java<CR>
 au FileType java nnoremap <F4> :!./jrun.sh<CR>
+
+au FileType sql inoremap ,nt CREATE TABLE <++>(<CR><++><CR>);<ESC>2k
+
+
+command Automota :!cat ~/documents/scripts/automota >> %
 
 let g:tex_flavor = 'tex'
 let g:seiya_auto_enable=1

@@ -45,7 +45,7 @@ window#waybar {
 }
 
 #disk  {
-    background: #e5c07b;
+    background: #61afef;
 }
 
 
@@ -90,7 +90,7 @@ window#waybar {
 #memory {
     /*border-top: 2px solid #ff79c6;*/
     /*border-radius: 10px;*/
-    background: #61afef;
+    background: #e5c07b;
     min-width: 60px;
 }
 
@@ -115,7 +115,9 @@ window#waybar {
 }
 
 #custom-spotify {
-    color: rgb(102, 220, 105);
+    color: #61afef;
+    background-color: #1d2026;
+    font-weight: bold;
 }
 
 #tray {

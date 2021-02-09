@@ -4,7 +4,7 @@
     "height": 10, // Waybar height
     // "width": 1366, // Waybar width
     // Choose the order of the modules
-    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-left": ["sway/workspaces", "sway/mode", "custom/spotify"],
     "modules-right": ["disk", "pulseaudio", "network", "network2", "cpu", "memory", "battery"],
     "modules-center": ["clock"],
 
@@ -75,11 +75,12 @@
         "on-click": "pavucontrol"
     },
     "custom/spotify": {
-        "format": " {}",
+        "format": "{} ",
         "max-length": 40,
-        "interval": 30, // Remove this if your script is endless and write in loop
-        "exec": "$HOME/.config/waybar/mediaplayer.sh 2> /dev/null", // Script in resources folder
-        "exec-if": "pgrep spotify"
+        "interval": 5, // Remove this if your script is endless and write in loop
+        //"exec": "$HOME/.config/waybar/spotify.sh 2> /dev/null", // Script in resources folder
+        "exec": "playerctl --player=spotifyd metadata --format '{{artist}} - {{title}}'", // Script in resources folder
+        "on-click": "playerctl play-pause"
     }
 }
 
@@ -100,13 +101,6 @@
         },
         "on-click": "pavucontrol"
     },
-    "custom/spotify": {
-        "format": " {}",
-        "max-length": 40,
-        "interval": 30, // Remove this if your script is endless and write in loop
-        "exec": "$HOME/.config/waybar/mediaplayer.sh 2> /dev/null", // Script in resources folder
-        "exec-if": "pgrep spotify"
-    }
 }
 
 
