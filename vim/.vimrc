@@ -16,6 +16,9 @@ Plugin 'miyakogi/seiya.vim'
 Bundle 'sonph/onehalf', {'rtp': 'vim/'}
 
 
+
+
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -28,7 +31,6 @@ colorscheme onehalfdark
 set background=dark
 let g:haskell_conceal_wide = 1
 syntax enable set display+=lastline
-
 " Tabs, indentation and numbers
 " ---------------------------------------------------
 set tabstop=4
@@ -179,6 +181,7 @@ let g:seiya_auto_enable=1
 
 let g:netrw_banner = 0
 let g:netrw_liststyle = 0
+let g:seiya_target_groups = has('nvim') ? ['guibg'] : ['ctermbg']
 
 let &t_SI = "\<Esc>[6 q"
 let &t_SR = "\<Esc>[4 q"

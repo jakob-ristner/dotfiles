@@ -207,7 +207,7 @@ bar {
 default_border pixel 0
 font pango: SourceCodePro Medium 12
 
-gaps outer 15
-gaps inner 0
+#gaps outer 15
+gaps inner 15
 
 include /etc/sway/config.d/*
