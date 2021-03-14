@@ -16,13 +16,13 @@ set $menu dmenu_run -b
 
 #wallpaper
 output * bg ~/media/wallpapers/artixonehalf.png fill
-#workspace 1 output HDMI-A-1
-#workspace 2 output HDMI-A-1
-#workspace 3 output HDMI-A-1
-#workspace 4 output HDMI-A-1
-#workspace 5 output HDMI-A-1
-#workspace 6 output HDMI-A-1
-#workspace 7 output HDMI-A-1
+workspace 1 output HDMI-A-1
+workspace 2 output HDMI-A-1
+workspace 3 output HDMI-A-1
+workspace 4 output HDMI-A-1
+workspace 5 output HDMI-A-1
+workspace 6 output HDMI-A-1
+workspace 7 output HDMI-A-1
 
 #Keymap
 input * {

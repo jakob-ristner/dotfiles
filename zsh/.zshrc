@@ -1,7 +1,11 @@
+#CLASSPATH=/usr/share/java/postgresql-jdbc/postgresql-9.2-1002.jdbc4.jar
+#export CLASSPATH
+
 # comment to test symlink
 # Enable colors and change prompt:
 autoload -U colors && colors	# Load colors
 PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%2~%{$fg[red]%}]%{$reset_color%}$%b "
+#PS1="%B%{$fg[magenta]%}%3~%{$fg[blue]%} »%{$reset_color%}%b "
 
 #PS1="%B%{$fg[blue]%}%2~ %{$fg[yellow]%}›%{$reset_color%}%b "
 #PS1="%B%{$fg[blue]%}%2~ %{$fg[yellow]%}%{$reset_color%}%b "
@@ -18,6 +22,7 @@ alias grep="grep --color=auto"
 alias pc="sudo pacman"
 alias mpv="mpv --gpu-context=wayland"
 alias adv="cd ~/git/adventofcode"
+alias dbjava="java -cp ~/downloads/postgresql-42.2.19.jar:"
 
 # Basic auto/tab complete:
 autoload -U compinit
@@ -64,6 +69,8 @@ preexec() { echo -ne '[5 q' ;} # Use beam shape cursor for each new prompt.
 
 # Load syntax highlighting; should be last.
 source /usr/share/zsh/plugins/fast-syntax-highlighting.plugin.zsh 2>/dev/null
+
+if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then exec startx; fi
 
 
     

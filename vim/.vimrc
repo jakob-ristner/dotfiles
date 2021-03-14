@@ -1,9 +1,11 @@
 filetype off                  " required
 " set the runtime path to include Vundle and initialize
+"
+" 
 set rtp+=$HOME/.vim/bundle/Vundle.vim/
 call vundle#begin('$HOME/.vim/bundle/')
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'joshdick/onedark.vim'
+Plugin 'arcticicestudio/nord-vim'
 Plugin 'mattn/emmet-vim' 
 Plugin 'lervag/vimtex'
 Plugin 'preservim/nerdtree'
@@ -13,9 +15,6 @@ Plugin 'sheerun/vim-polyglot'
 Plugin 'vincent-uden/LatexSnippets'
 Plugin 'junegunn/goyo.vim'
 Plugin 'miyakogi/seiya.vim'
-Bundle 'sonph/onehalf', {'rtp': 'vim/'}
-
-
 
 
 
@@ -27,8 +26,7 @@ let mapleader = " "
 
 "Colors 
 " ---------------------------------------------------
-colorscheme onehalfdark
-set background=dark
+colorscheme nord
 let g:haskell_conceal_wide = 1
 syntax enable set display+=lastline
 " Tabs, indentation and numbers
@@ -117,7 +115,6 @@ nnoremap <leader>q @q
 "Some latex things
 nnoremap <leader>e i\section{}<Left>
 nnoremap <leader>w i\begin{}<Left>
-
 " Markdown syntax recognition
 " -----------------------------------------------------
 let g:vimwiki_ext2syntax = {'.Rmd': 'markdown', '.rmd': 'markdown', '.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
@@ -137,6 +134,8 @@ let g:user_emmet_leader_key = "<C-F>"
 set colorcolumn=0
 let mapleader = ","
 
+au FileType tex match
+
 nnoremap <space><space> /<++><CR>:noh<CR>4cl
 
 au FileType slim setl sw=2 sts=2 et
@@ -154,7 +153,6 @@ au FileType rust nnoremap <F4> :!cargo run<CR>
 au FileType cpp nnoremap <F3> :!make<CR>
 au FileType cpp nnoremap <F4> :!make crun<CR>
 
-au FileType hpp nnoremap <F3> :!make<CR>
 au FileType hpp nnoremap <F4> :!make crun<CR>
 
 au FileType c nnoremap <F3> :!make<CR>
@@ -169,12 +167,9 @@ au FileType haskell nnoremap <F4> :!./%:r<CR>
 au FileType haskell nnoremap <F10> :!ghci %<CR>
 
 au FileType java nnoremap <F3> :!javac *.java<CR>
-au FileType java nnoremap <F4> :!./jrun.sh<CR>
+au FileType java nnoremap <F4> :!java %:r<CR>
 
 au FileType sql inoremap ,nt CREATE TABLE <++>(<CR><++><CR>);<ESC>2k
-
-
-command Automota :!cat ~/documents/scripts/automota >> %
 
 let g:tex_flavor = 'tex'
 let g:seiya_auto_enable=1
