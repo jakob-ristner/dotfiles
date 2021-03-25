@@ -1,7 +1,3 @@
-#CLASSPATH=/usr/share/java/postgresql-jdbc/postgresql-9.2-1002.jdbc4.jar
-#export CLASSPATH
-
-# comment to test symlink
 # Enable colors and change prompt:
 autoload -U colors && colors	# Load colors
 PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%2~%{$fg[red]%}]%{$reset_color%}$%b "
