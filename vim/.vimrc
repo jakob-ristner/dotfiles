@@ -147,6 +147,9 @@ au FileType tex nnoremap <F3> :!xelatex <C-r>%<CR>
 au FileType tex nnoremap <F4> :!zathura %:r.pdf --fork<CR><CR>
 au FileType tex execute 'setlocal dict+=~/github/vincent/dotfiles/latex.txt'
 
+au FileType markdown nnoremap <F3> :!mdcomp <C-r>%<CR>
+au FileType markdown nnoremap <F4> :!zathura %:r.pdf --fork<CR><CR>
+
 au FileType rust nnoremap <F3> :!cargo check<CR>
 au FileType rust nnoremap <F4> :!cargo run<CR>
 
